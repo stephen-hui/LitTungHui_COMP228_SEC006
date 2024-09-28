@@ -7,8 +7,9 @@ public class Test {
     // to store all the questions
     private Question[] questions;
 
-    // the index question displaying
-    private int questionIndex;
+    // to store results
+    private int correctAnswers = 0;
+    private int wrongAnswers = 0;
 
     // all responses for correct answer
     private String[] correctResponse = {
@@ -32,12 +33,21 @@ public class Test {
         this.questions[4] = new Question("Class variables must be declared as___________.", new String[]{"final","static","const","var"},1);
     }
 
-    public void simulateQuestion(){
-        // generate random index within the questions
-        questionIndex = randomObject.nextInt(questions.length);
+    public int simulateQuestion(int questionIndex){
+        // display popup and return user choice
+        return JOptionPane.showOptionDialog(
+                null,
+                this.questions[questionIndex].getQuestion(),
+                "Question",
+                JOptionPane.DEFAULT_OPTION,
+                JOptionPane.INFORMATION_MESSAGE,
+                null,
+                this.questions[questionIndex].getOptions(),
+                null
+        );
     }
 
-    public boolean checkAnswer(int choice){
+    public boolean checkAnswer(int questionIndex, int choice){
         // input user choice to compare with the answer in Question
         return choice == this.questions[questionIndex].getAnswerIndex();
     }
@@ -53,28 +63,35 @@ public class Test {
     }
 
     public void inputAnswer(){
-        // init question
-        simulateQuestion();
+        // to store user's choice and display message
+        int choice;
+        String message;
+        float percentage;
 
-        // show dialog and get user input
-        int choice = JOptionPane.showOptionDialog(
-                null,
-                this.questions[questionIndex].getQuestion(),
-                "Question",
-                JOptionPane.DEFAULT_OPTION,
-                JOptionPane.INFORMATION_MESSAGE,
-                null,
-                this.questions[questionIndex].getOptions(),
-                null
-        );
+        for(int i=0; i<questions.length; i++){
+            choice = simulateQuestion(i);
 
-        // check answer
-        boolean result = this.checkAnswer(choice);
+            if(checkAnswer(i,choice)){
+                // if answer is correct
+                message = generateMessage(true);
+                JOptionPane.showMessageDialog(null,  message, "Correct",
+                        JOptionPane.INFORMATION_MESSAGE);
+                correctAnswers++;
+            }else{
+                // wrong answer
+                message = generateMessage(false);
+                JOptionPane.showMessageDialog(null,  message, "Incorrect",
+                        JOptionPane.INFORMATION_MESSAGE);
+                wrongAnswers++;
+            }
+        }
 
-        String message = generateMessage(result);
+        // final message for user
+        percentage = (float)correctAnswers/ ((float)wrongAnswers + (float)correctAnswers);
+        message = "Correct answers: " + correctAnswers + ", Wrong answers: " + wrongAnswers + ". The percentage of correct answers: " + percentage * 100 + "%" ;
 
-        // show result
-        JOptionPane.showMessageDialog(null,  message, result? "Correct" : "Incorrect",
+        // show the message
+        JOptionPane.showMessageDialog(null,  message, "Result",
                 JOptionPane.INFORMATION_MESSAGE);
     }
 }
