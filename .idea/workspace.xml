@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b88d2167-072f-4a88-abd1-4c204fe44ebb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/JavaProgramming/src/week4/Day.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProgramming/src/week4/DummyClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LitTungHui_Comp228Lab2/src/exercise1/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/LitTungHui_Comp228Lab2/src/exercise1/Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +50,21 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="LitTungHui_COMP228_SEC006" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="LitTungHui_COMP228_SEC006" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -72,6 +85,7 @@
       <workItem from="1727305960286" duration="5477000" />
       <workItem from="1727322123060" duration="691000" />
       <workItem from="1727490992496" duration="480000" />
+      <workItem from="1728504943897" duration="225000" />
     </task>
     <servers />
   </component>
