@@ -1,7 +1,5 @@
 package com.lab5.littunghui_comp228lab5;
 
-import java.util.Date;
-
 public class PlayerGameRecord {
     private String game;
     private int score;

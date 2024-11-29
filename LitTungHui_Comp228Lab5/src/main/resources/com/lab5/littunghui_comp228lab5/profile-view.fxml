@@ -7,6 +7,7 @@
 <?import javafx.scene.layout.*?>
 
 <GridPane alignment="TOP_CENTER" xmlns:fx="http://javafx.com/fxml" fx:controller="com.lab5.littunghui_comp228lab5.ProfileController" hgap="10" vgap="10" style="-fx-padding: 20;">
+    <!--  Same as Add User Form but with different controller  -->
     <columnConstraints>
         <ColumnConstraints percentWidth="30"/>
         <ColumnConstraints percentWidth="70"/>

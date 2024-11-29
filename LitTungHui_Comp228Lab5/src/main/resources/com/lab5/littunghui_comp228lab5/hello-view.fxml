@@ -14,12 +14,18 @@
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TableColumn?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.DatePicker?>
+
 <VBox alignment="TOP_CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.lab5.littunghui_comp228lab5.HelloController" >
     <padding>
         <Insets top="20" right="20" bottom="20" left="20"/>
     </padding>
 
+    <!-- Players ComboBox and Buttons -->
     <HBox spacing="30" >
         <ComboBox fx:id="playerComboBox" onAction="#setPlayer">
         </ComboBox>
@@ -38,12 +44,38 @@
         </Text>
     </HBox>
 
-<!--    <TableView fx:id="recordTable" >-->
-<!--        <columns>-->
-<!--            <TableColumn text="Game" fx:id="gameColumn" />-->
-<!--            <TableColumn text="Score" fx:id="scoreColumn" />-->
-<!--            <TableColumn text="Date" fx:id="dateColumn" />-->
-<!--        </columns>-->
-<!--    </TableView>-->
+    <!-- Add Record Form -->
+    <HBox alignment="CENTER_LEFT" spacing="20">
+        <HBox alignment="CENTER_LEFT">
+            <Label text="Game: "></Label>
+            <ComboBox fx:id="gameComboBox" onAction="#setCurrentNewGame">
+            </ComboBox>
+        </HBox>
+
+        <HBox alignment="CENTER_LEFT">
+            <Label text="Score:"></Label>
+            <TextField fx:id="scoreField"></TextField>
+        </HBox>
+
+        <HBox alignment="CENTER_LEFT">
+            <Label text="Date:"></Label>
+            <DatePicker fx:id="datePicker" />
+        </HBox>
+    </HBox>
+
+    <!-- Add Record Button -->
+    <HBox>
+        <Button fx:id="addRecordBtn" text="Add record" onAction="#addRecord" disable="true"></Button>
+    </HBox>
+
+    <!-- Records Table View -->
+    <TableView fx:id="recordTable" >
+        <columns>
+            <TableColumn text="Game" fx:id="gameColumn" minWidth="200"/>
+            <TableColumn text="Score" fx:id="scoreColumn" minWidth="200"/>
+            <TableColumn text="Date" fx:id="dateColumn" minWidth="200"/>
+        </columns>
+    </TableView>
+
 
 </VBox>
