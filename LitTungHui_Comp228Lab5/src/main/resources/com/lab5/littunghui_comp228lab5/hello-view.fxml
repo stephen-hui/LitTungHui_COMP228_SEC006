@@ -3,14 +3,47 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
 
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.lab5.littunghui_comp228lab5.HelloController">
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<VBox alignment="TOP_CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.lab5.littunghui_comp228lab5.HelloController" >
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        <Insets top="20" right="20" bottom="20" left="20"/>
     </padding>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+    <HBox spacing="30" >
+        <ComboBox fx:id="playerComboBox" onAction="#setPlayer">
+        </ComboBox>
+        <Button fx:id="showProfileBtn" text="Show Profile" onAction="#toProfilePage" disable="true">
+        </Button>
+        <Button text="Show Game" onAction="#toGamePage">
+        </Button>
+        <Button fx:id="addPlayerBtn" text="Add Player" onAction="#toAddUserPage">
+        </Button>
+    </HBox>
+
+    <Separator orientation="HORIZONTAL" />
+
+    <HBox>
+        <Text text="Records" style="-fx-font-weight: bold; -fx-font-size: 20px;">
+        </Text>
+    </HBox>
+
+<!--    <TableView fx:id="recordTable" >-->
+<!--        <columns>-->
+<!--            <TableColumn text="Game" fx:id="gameColumn" />-->
+<!--            <TableColumn text="Score" fx:id="scoreColumn" />-->
+<!--            <TableColumn text="Date" fx:id="dateColumn" />-->
+<!--        </columns>-->
+<!--    </TableView>-->
+
 </VBox>
